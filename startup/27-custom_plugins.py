@@ -42,7 +42,7 @@ class JPEGPluginWithFileStore(JPEGPlugin, FileStoreJPEG):
 @register_plugin
 class CVPlugin(PluginBase):
     _default_suffix = "CV1:"
-    _suffix_re = "CV1\d:"
+    _suffix_re = r"CV1\d:"
     _default_read_attrs = ["outputs"]
     func_sets = DDC_EpicsSignal(
         *[(f"func_set{k}", f"CompVisionFunction{k}") for k in range(1, 4)]
